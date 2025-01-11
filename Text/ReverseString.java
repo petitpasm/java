@@ -1,14 +1,14 @@
+package Text;
 import java.util.Scanner;
 
 public class ReverseString {
     public static void main(String[] args) {
-        // System.out.println(getString(null));
-        String stringToReverse = getString(args);
+        String stringToReverse = getString();
         String reversedString = reverseString(stringToReverse);
         System.out.println(reversedString);
     }
 
-    static String getString(String[] args) {
+    static String getString() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the sentence you want to reverse:");
 
