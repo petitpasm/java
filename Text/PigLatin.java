@@ -20,16 +20,21 @@ public class PigLatin {
         String[] splittedString = inputString.toLowerCase().split(" ");
 
         for (String word : splittedString) {
+            char symbol = 0;
             char c = word.charAt(0);
                 if (isVowel(c)) {
                     word = word.concat("yay");
                 } else {
                     String newWord = "";
                     for (int i = 1; i < word.length(); i++) {
-                        newWord = newWord + word.charAt(i);
+                        if (Character.isLetter(word.charAt(i))) {
+                            newWord = newWord + word.charAt(i);
+                        } else {
+                            symbol = word.charAt(i);
+                        }
                     }
-                    newWord = newWord + word.charAt(0);
-                    word = newWord + "ay";
+                    newWord = newWord + c;
+                    word = newWord + "ay" + symbol;
                 }
             piggedString = piggedString.concat(word) + " ";
         }
